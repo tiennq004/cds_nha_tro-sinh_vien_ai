@@ -1,0 +1,40 @@
+{
+  "name": "nha-tro-sinh-vien-ai",
+  "version": "1.0.0",
+  "description": "Website tìm kiếm nhà trọ cho sinh viên với AI gợi ý và Chatbot",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm run dev",
+    "install-all": "npm install && cd client && npm install",
+    "init-db": "node server/database/init.js",
+    "seed-db": "node server/database/seed.js"
+  },
+  "keywords": [
+    "nhà trọ",
+    "sinh viên",
+    "AI",
+    "gemini",
+    "chatbot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  }
+}

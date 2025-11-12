@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Nhà trọ sinh viên gần Đại học Công nghệ",
+    "description": "Nhà trọ sạch sẽ, an ninh, phù hợp cho sinh viên. Gần trường, gần chợ và các tiện ích khác.",
+    "price": 1500000,
+    "address": "123 Đường ABC, Phường XYZ, Quận 1, TP.HCM",
+    "area": 20,
+    "utilities": ["Điều hòa", "Wifi", "Nước nóng", "Giường", "Tủ lạnh", "Nhà vệ sinh riêng"],
+    "images": ["/images/room1.jpg"],
+    "contact": {
+      "phone": "0901234567",
+      "name": "Anh Minh"
+    },
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "Phòng trọ giá rẻ gần Bách Khoa",
+    "description": "Phòng trọ rộng rãi, thoáng mát, có cửa sổ. Gần trường Đại học Bách Khoa, thuận tiện đi lại.",
+    "price": 1200000,
+    "address": "456 Đường DEF, Phường UVW, Quận 2, TP.HCM",
+    "area": 18,
+    "utilities": ["Quạt", "Wifi", "Nước nóng", "Giường", "Bàn học"],
+    "images": ["/images/room2.jpg"],
+    "contact": {
+      "phone": "0907654321",
+      "name": "Chị Lan"
+    },
+    "available": true
+  },
+  {
+    "id": 3,
+    "title": "Căn hộ mini đầy đủ tiện nghi",
+    "description": "Căn hộ mini mới xây, đầy đủ tiện nghi hiện đại. Phù hợp cho 1-2 người, an ninh tốt.",
+    "price": 2500000,
+    "address": "789 Đường GHI, Phường RST, Quận 3, TP.HCM",
+    "area": 30,
+    "utilities": ["Điều hòa", "Wifi", "Nước nóng", "Giường", "Tủ lạnh", "Bếp", "Máy giặt", "Nhà vệ sinh riêng"],
+    "images": ["/images/room3.jpg"],
+    "contact": {
+      "phone": "0912345678",
+      "name": "Anh Tuấn"
+    },
+    "available": true
+  },
+  {
+    "id": 4,
+    "title": "Nhà trọ sinh viên gần Kinh tế",
+    "description": "Nhà trọ gần trường Đại học Kinh tế, giá cả phải chăng, chủ nhà thân thiện.",
+    "price": 1000000,
+    "address": "321 Đường JKL, Phường MNO, Quận 10, TP.HCM",
+    "area": 15,
+    "utilities": ["Quạt", "Wifi", "Nước nóng", "Giường"],
+    "images": ["/images/room4.jpg"],
+    "contact": {
+      "phone": "0923456789",
+      "name": "Cô Hương"
+    },
+    "available": true
+  },
+  {
+    "id": 5,
+    "title": "Phòng trọ cao cấp gần trung tâm",
+    "description": "Phòng trọ cao cấp, nội thất đẹp, gần trung tâm thành phố. Phù hợp cho sinh viên muốn có không gian sống tốt.",
+    "price": 3000000,
+    "address": "654 Đường PQR, Phường STU, Quận 1, TP.HCM",
+    "area": 35,
+    "utilities": ["Điều hòa", "Wifi", "Nước nóng", "Giường", "Tủ lạnh", "Bếp", "Máy giặt", "TV", "Nhà vệ sinh riêng", "Ban công"],
+    "images": ["/images/room5.jpg"],
+    "contact": {
+      "phone": "0934567890",
+      "name": "Anh Đức"
+    },
+    "available": true
+  },
+  {
+    "id": 6,
+    "title": "Nhà trọ giá rẻ khu vực ngoại thành",
+    "description": "Nhà trọ giá rẻ, phù hợp cho sinh viên có ngân sách hạn chế. Không gian yên tĩnh, mát mẻ.",
+    "price": 800000,
+    "address": "987 Đường VWX, Phường YZA, Quận Bình Tân, TP.HCM",
+    "area": 12,
+    "utilities": ["Quạt", "Wifi", "Giường"],
+    "images": ["/images/room6.jpg"],
+    "contact": {
+      "phone": "0945678901",
+      "name": "Bác Nam"
+    },
+    "available": true
+  }
+]
+
+
+
+
+
+
+
+
+
+
