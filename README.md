@@ -113,19 +113,65 @@
 
 ---
 
-## 🧩 3. Chức năng chính
+## 🧩 3. Hình ảnh các chức năng
 
-### 👤 Người thuê trọ
-- Đăng ký, đăng nhập tài khoản.  
-- Tìm kiếm, lọc, và **so sánh phòng trọ**.  
-- **Đặt cọc phòng qua mã QR** được chủ trọ cung cấp.  
-- Nhắn tin trực tiếp với chủ trọ.
 
-### 🏠 Người cho thuê
-- Thêm mới, sửa, xóa thông tin phòng trọ.  
-- Upload hình ảnh và **mã QR thanh toán**.  
-- Quản lý danh sách phòng, kiểm soát tình trạng còn trống.  
-- Trả lời tin nhắn và xác nhận đặt cọc.
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/giao_dien_chinh.png" alt="Ảnh 1" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 1: Giao diện chính của hệ thống  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/giao_dien_form_dang_ky.png" alt="Ảnh 2" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 2: Giao diện form đăng ký  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/giao_dien_form_dang_nhap.png" alt="Ảnh 3" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 3: Giao diện form đăng nhập  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/giao_dien_quan_ly_phong_tro.png" alt="Ảnh 4" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 4: Giao diện quản lý phòng trọ  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/so_sanh_phong_tro.png" alt="Ảnh 5" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 5: So sánh phòng trọ  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/them_tt_phong_tro.png" alt="Ảnh 6" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 6: Thêm thông tin phòng trọ  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/LTM_he_thong_canh_bao_thoi_gian_thuc/blob/main/docs/giao_dien_server.png" alt="Ảnh 7" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 7: Nhắn tin trao đổi thông tin giữa người thuê và người cho thuê  </em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/xem_tro_tren_ggmap.png" alt="Ảnh 8" width="800"/>
+</p> 
+<p align="center">
+  <em>Hình 8: Xem địa chỉ trọ trên Google Map  </em>
+</p>
+
 
 ---
 
