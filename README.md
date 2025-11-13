@@ -26,50 +26,51 @@
 
 ## 1. Mục tiêu của hệ thống
 
-Tối ưu hóa trải nghiệm tìm kiếm phòng trọ bằng AI và bản đồ tương tác.
+- Tối ưu hóa trải nghiệm tìm kiếm phòng trọ bằng AI và bản đồ tương tác.
 
-Kết nối người thuê và người cho thuê trong cùng nền tảng, đảm bảo minh bạch, tiện lợi.
+- Kết nối người thuê và người cho thuê trong cùng nền tảng, đảm bảo minh bạch, tiện lợi.
 
-Tự động gợi ý phòng trọ phù hợp với nhu cầu và vị trí người dùng nhờ hệ thống AI thông minh.
+- Tự động gợi ý phòng trọ phù hợp với nhu cầu và vị trí người dùng nhờ hệ thống AI thông minh.
 
-Tích hợp chatbot tư vấn, so sánh phòng trọ, và tìm người ở ghép để mở rộng trải nghiệm.
+- Tích hợp chatbot tư vấn, so sánh phòng trọ, và tìm người ở ghép để mở rộng trải nghiệm.
 
 ⚙️ Thành phần hệ thống
+
 🔹 1. Người thuê (Client)
 
-Tìm kiếm phòng trọ theo vị trí, giá, tiện nghi, bản đồ tương tác.
+- Tìm kiếm phòng trọ theo vị trí, giá, tiện nghi, bản đồ tương tác.
 
-Xem chi tiết, so sánh, đánh giá và lưu phòng yêu thích.
+- Xem chi tiết, so sánh, đánh giá và lưu phòng yêu thích.
 
-Giao tiếp trực tiếp với chủ trọ qua tính năng nhắn tin.
+- Giao tiếp trực tiếp với chủ trọ qua tính năng nhắn tin.
 
-Sử dụng AI chatbot để được gợi ý phòng trọ phù hợp.
+- Sử dụng AI chatbot để được gợi ý phòng trọ phù hợp.
 
-Có thể đăng yêu cầu tìm người ở ghép hoặc xem các bài đăng tương tự.
+- Có thể đăng yêu cầu tìm người ở ghép hoặc xem các bài đăng tương tự.
 
 🔹 2. Người cho thuê (Host)
 
-Đăng bài cho thuê phòng, quản lý thông tin, cập nhật, xóa bài đăng.
+- Đăng bài cho thuê phòng, quản lý thông tin, cập nhật, xóa bài đăng.
 
-Quản lý danh sách phòng, xem tin nhắn từ người thuê.
+- Quản lý danh sách phòng, xem tin nhắn từ người thuê.
 
-Cập nhật trạng thái phòng (đã thuê/chưa thuê).
+- Cập nhật trạng thái phòng (đã thuê/chưa thuê).
 
-Quản lý hồ sơ cá nhân và bảo mật tài khoản.
+- Quản lý hồ sơ cá nhân và bảo mật tài khoản.
 
 💡 Điểm nổi bật
 
-💬 AI Chatbot hỗ trợ người thuê tìm nhà nhanh chóng.
+- 💬 AI Chatbot hỗ trợ người thuê tìm nhà nhanh chóng.
 
-🗺️ Tích hợp bản đồ OpenStreetMap & Nominatim API cho phép xem vị trí phòng thực tế.
+- 🗺️ Tích hợp bản đồ OpenStreetMap & Nominatim API cho phép xem vị trí phòng thực tế.
 
-🔒 Bảo mật tài khoản với JWT Authentication.
+- 🔒 Bảo mật tài khoản với JWT Authentication.
 
-📊 Hệ thống gợi ý thông minh dựa trên dữ liệu hành vi và từ khóa tìm kiếm.
+- 📊 Hệ thống gợi ý thông minh dựa trên dữ liệu hành vi và từ khóa tìm kiếm.
 
-💻 Giao diện thân thiện, hiện đại xây dựng bằng React + Bootstrap.
+- 💻 Giao diện thân thiện, hiện đại xây dựng bằng React + Bootstrap.
 
-⚙️ Hệ thống Backend mạnh mẽ với Node.js + Express + MySQL.
+- ⚙️ Hệ thống Backend mạnh mẽ với Node.js + Express + MySQL.
 
 ## ⚙️ 2. Công nghệ và công cụ sử dụng
 
