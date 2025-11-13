@@ -10,8 +10,8 @@
 
 <div align="center">
     <p align="center">
-        <img src="https://github.com/tiennq004/BTL_ChuyenDoiSo/blob/main/docs/logo_fitdnu.png" alt="FIT DNU Logo" width="180"/>
-        <img src="https://github.com/tiennq004/BTL_ChuyenDoiSo/blob/main/docs/logo_dnu.png" alt="DaiNam University Logo" width="200"/>
+        <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/fitdnu_logo.png" alt="FIT DNU Logo" width="180"/>
+        <img src="https://github.com/tiennq004/cds_nha_tro-sinh_vien_ai/blob/main/img/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
     </p>
 
 [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
