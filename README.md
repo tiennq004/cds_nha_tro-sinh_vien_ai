@@ -22,110 +22,106 @@
 
 ---
 
-## 📖 1. Giới thiệu hệ thống
 
-**Ứng dụng Chuyển đổi số trong tìm kiếm nhà trọ** là hệ thống web hỗ trợ sinh viên và người cho thuê trọ đăng tin, tìm kiếm, so sánh, và đặt cọc trực tuyến thông qua mã QR.  
-Hệ thống được phát triển nhằm **nâng cao hiệu quả quản lý phòng trọ**, giúp tiết kiệm thời gian, minh bạch thông tin và hỗ trợ quá trình chuyển đổi số trong lĩnh vực bất động sản cho thuê.
 
-### 🎯 Mục tiêu chính
-- Giúp **người thuê trọ** dễ dàng tìm kiếm, lọc, so sánh và đặt cọc phòng nhanh chóng.  
-- Hỗ trợ **người cho thuê** quản lý danh sách phòng, thêm ảnh, cập nhật tình trạng, và nhận thông tin đặt cọc.  
-- Tích hợp **AI gợi ý nhà trọ** dựa trên hành vi tìm kiếm.  
-- Cung cấp **nền tảng giao tiếp trực tiếp (chat)** giữa người thuê và chủ trọ.  
-- Ứng dụng mã **QR thanh toán đặt cọc** thông qua hình ảnh do chủ trọ tải lên.
+## 1. Mục tiêu của hệ thống
+
+Tối ưu hóa trải nghiệm tìm kiếm phòng trọ bằng AI và bản đồ tương tác.
+
+Kết nối người thuê và người cho thuê trong cùng nền tảng, đảm bảo minh bạch, tiện lợi.
+
+Tự động gợi ý phòng trọ phù hợp với nhu cầu và vị trí người dùng nhờ hệ thống AI thông minh.
+
+Tích hợp chatbot tư vấn, so sánh phòng trọ, và tìm người ở ghép để mở rộng trải nghiệm.
+
+⚙️ Thành phần hệ thống
+🔹 1. Người thuê (Client)
+
+Tìm kiếm phòng trọ theo vị trí, giá, tiện nghi, bản đồ tương tác.
+
+Xem chi tiết, so sánh, đánh giá và lưu phòng yêu thích.
+
+Giao tiếp trực tiếp với chủ trọ qua tính năng nhắn tin.
+
+Sử dụng AI chatbot để được gợi ý phòng trọ phù hợp.
+
+Có thể đăng yêu cầu tìm người ở ghép hoặc xem các bài đăng tương tự.
+
+🔹 2. Người cho thuê (Host)
+
+Đăng bài cho thuê phòng, quản lý thông tin, cập nhật, xóa bài đăng.
+
+Quản lý danh sách phòng, xem tin nhắn từ người thuê.
+
+Cập nhật trạng thái phòng (đã thuê/chưa thuê).
+
+Quản lý hồ sơ cá nhân và bảo mật tài khoản.
+
+💡 Điểm nổi bật
+
+💬 AI Chatbot hỗ trợ người thuê tìm nhà nhanh chóng.
+
+🗺️ Tích hợp bản đồ OpenStreetMap & Nominatim API cho phép xem vị trí phòng thực tế.
+
+🔒 Bảo mật tài khoản với JWT Authentication.
+
+📊 Hệ thống gợi ý thông minh dựa trên dữ liệu hành vi và từ khóa tìm kiếm.
+
+💻 Giao diện thân thiện, hiện đại xây dựng bằng React + Bootstrap.
+
+⚙️ Hệ thống Backend mạnh mẽ với Node.js + Express + MySQL.
+
+## ⚙️ 2. Công nghệ và công cụ sử dụng
+
+| Thành phần | Công nghệ |
+|-------------|------------|
+| **Frontend** | ReactJS, Axios, CSS |
+| **Backend** | NodeJS (ExpressJS) |
+| **Database** | MySQL (XAMPP) |
+| **AI Module** | Gemini API (gợi ý nhà trọ) |
+| **IDE** | Visual Studio Code |
+| **Kiểm thử** | Postman, GitHub Desktop |
 
 ---
 
-## 🔧 2. Công nghệ và công cụ sử dụng
+## 🧩 3. Chức năng chính
 
-- **Frontend:** ReactJS, Axios, CSS  
-- **Backend:** NodeJS (ExpressJS)  
-- **Cơ sở dữ liệu:** MySQL (chạy trên XAMPP)  
-- **AI Module:** Tích hợp Gemini API để gợi ý phòng trọ phù hợp  
-- **IDE:** Visual Studio Code  
-- **Triển khai:** Vercel / AWS  
-- **Kiểm thử:** Postman, GitHub  
-
----
-
-## 🏠 3. Các chức năng chính
-
-### 🧑‍🎓 Người thuê trọ:
+### 👤 Người thuê trọ
 - Đăng ký, đăng nhập tài khoản.  
-- Tìm kiếm phòng trọ theo khu vực, giá, diện tích, tiện ích.  
-- So sánh các phòng trọ.  
-- Nhắn tin trực tiếp với chủ trọ.  
-- Đặt cọc phòng thông qua mã QR.
+- Tìm kiếm, lọc, và **so sánh phòng trọ**.  
+- **Đặt cọc phòng qua mã QR** được chủ trọ cung cấp.  
+- Nhắn tin trực tiếp với chủ trọ.
 
-### 🏠 Người cho thuê:
-- Đăng tin phòng trọ mới, kèm ảnh, tiện ích, mã QR.  
-- Quản lý danh sách phòng đã đăng.  
-- Xem và phản hồi tin nhắn từ người thuê.  
-- Theo dõi các lượt đặt cọc.
+### 🏠 Người cho thuê
+- Thêm mới, sửa, xóa thông tin phòng trọ.  
+- Upload hình ảnh và **mã QR thanh toán**.  
+- Quản lý danh sách phòng, kiểm soát tình trạng còn trống.  
+- Trả lời tin nhắn và xác nhận đặt cọc.
 
 ---
 
-## 🚀 4. Hình ảnh hệ thống
+## 🧪 4. Kết quả thử nghiệm
+
+| Tiêu chí | Kết quả đạt được |
+|-----------|------------------|
+| Tốc độ tải trang | Dưới 2 giây |
+| Độ ổn định | Hoạt động ổn định |
+| Lọc và so sánh | Chính xác, mượt |
+| Chat người dùng | Tin nhắn gửi tức thời |
+| Đặt cọc bằng QR | Quét nhanh, dễ thao tác |
 
 <p align="center">
-  <img src="docs/giao_dien_chinh.png" alt="Ảnh 1" width="800"/>
-  <em>Hình 1: Giao diện chính của hệ thống</em>
-</p>
-
-<p align="center">
-  <img src="docs/giao_dien_form_dang_ky.png" alt="Ảnh 2" width="800"/>
-  <em>Hình 2: Form đăng ký người dùng</em>
-</p>
-
-<p align="center">
-  <img src="docs/giao_dien_form_dang_nhap.png" alt="Ảnh 3" width="800"/>
-  <em>Hình 3: Form đăng nhập</em>
-</p>
-
-<p align="center">
-  <img src="docs/xem_tro_tren_gmap.png" alt="Ảnh 4" width="800"/>
-  <em>Hình 4: Tích hợp Google Maps xem vị trí nhà trọ</em>
-</p>
-
-<p align="center">
-  <img src="docs/them_tt_phong_tro.png" alt="Ảnh 5" width="800"/>
-  <em>Hình 5: Giao diện thêm thông tin phòng trọ</em>
-</p>
-
-<p align="center">
-  <img src="docs/giao_dien_quan_ly_phong_tro.png" alt="Ảnh 6" width="800"/>
-  <em>Hình 6: Giao diện quản lý phòng trọ của chủ trọ</em>
-</p>
-
-<p align="center">
-  <img src="docs/tin_nhan.png" alt="Ảnh 7" width="800"/>
-  <em>Hình 7: Tính năng nhắn tin giữa người thuê và chủ trọ</em>
-</p>
-
-<p align="center">
-  <img src="docs/so_sanh_phong_tro.png" alt="Ảnh 8" width="800"/>
-  <em>Hình 8: So sánh các phòng trọ đã chọn</em>
-</p>
-
-<p align="center">
-  <img src="docs/ai.png" alt="Ảnh 9" width="800"/>
-  <em>Hình 9: AI gợi ý phòng trọ phù hợp</em>
+  <img src="docs/giao_dien_chinh.png" alt="Ảnh giao diện chính" width="700"/>
 </p>
 
 ---
 
-## 📂 5. Cài đặt và chạy dự án
+## 👥 5. Nhóm thực hiện
 
-### 🪜 Bước 1. Chuẩn bị
-- Cài đặt **Node.js**, **npm** và **XAMPP**  
-- Khởi động **MySQL** và **Apache**
+| Họ và tên | Lớp | Vai trò |
+|------------|------|----------|
+| **Nguyễn Quang Tiến** | CNTT 16-03 | Thiết kế & lập trình Frontend |
+| **Hoàng Công Sơn** | CNTT 16-03 | Thiết kế & lập trình Backend |
 
-### 🪜 Bước 2. Cấu hình cơ sở dữ liệu
-- Tạo database `nhatro`  
-- Import file `nhatro.sql` trong thư mục `server/database/`
-
-### 🪜 Bước 3. Chạy server
-```bash
-cd server
-npm install
-npm start
+**Giảng viên hướng dẫn:** ThS. Nguyễn Văn Nhơn  
+© 2025 – Khoa Công Nghệ Thông Tin, Trường Đại học Đại Nam.
