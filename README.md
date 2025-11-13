@@ -179,63 +179,65 @@
 
 1. Các bước cài đặt và chạy chương trình
 
-Bước 1. Giải nén dự án
+- Bước 1. Giải nén dự án
 
-- Giải nén file BTL.zip vào một thư mục bất kỳ.
+    - Giải nén file BTL.zip vào một thư mục bất kỳ.
 
-Bước 2. Cài đặt môi trường
+- Bước 2. Cài đặt môi trường
 
-- Cài Node.js (phiên bản ≥ 18).
+    - Cài Node.js (phiên bản ≥ 18).
 
-- Cài MongoDB (nếu dự án sử dụng cơ sở dữ liệu này).
+    - Cài MongoDB (nếu dự án sử dụng cơ sở dữ liệu này).
 
-Bước 3. Cài đặt thư viện
+- Bước 3. Cài đặt thư viện
 
-Mở Terminal hoặc CMD tại thư mục gốc của dự án và chạy lệnh:
+    - Mở Terminal hoặc CMD tại thư mục gốc của dự án và chạy lệnh:
 
-    npm install
+            npm install
 
-Sau đó di chuyển vào thư mục client để cài thư viện cho giao diện:
+    - Sau đó di chuyển vào thư mục client để cài thư viện cho giao diện:
 
-    cd client
+            cd client
     
-    npm install
+            npm install
 
 
-Bước 4. Cấu hình biến môi trường
+- Bước 4. Cấu hình biến môi trường
 
-Tạo file .env trong thư mục chính (nếu chưa có).
+    - Tạo file .env trong thư mục chính (nếu chưa có).
 
-Điền các thông tin kết nối, ví dụ:
+    - Điền các thông tin kết nối, ví dụ:
 
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/tenCSDL
-JWT_SECRET=secret_key
+            PORT=5000
 
+            MONGO_URI=mongodb://localhost:27017/tenCSDL
 
-Bước 5. Chạy chương trình
-Mở hai cửa sổ terminal:
+            JWT_SECRET=secret_key
 
-Cửa sổ 1 (backend):
+- Bước 5. Chạy chương trình
 
-npm start
+    - Mở hai cửa sổ terminal:
+    
+    - Cửa sổ 1 (backend):
 
+            npm start
 
-Cửa sổ 2 (frontend):
+    - Cửa sổ 2 (frontend):
 
-cd client
-npm run dev
+            cd client
 
+            npm run dev
 
-Sau khi khởi chạy, mở trình duyệt và truy cập địa chỉ:
-👉 http://localhost:5173
- (hoặc cổng hiển thị trong terminal).
+    - Sau khi khởi chạy, mở trình duyệt và truy cập địa chỉ:
 
-Bước 6. Kiểm tra hoạt động
+            👉 http://localhost:5173
+             (hoặc cổng hiển thị trong terminal).
 
-Đăng ký / Đăng nhập người dùng.
+- Bước 6. Kiểm tra hoạt động
 
-Kiểm tra các chức năng chính: thêm, sửa, xóa, tìm kiếm, upload...
+    - Đăng ký / Đăng nhập người dùng.
+
+    - Kiểm tra các chức năng chính: thêm, sửa, xóa, tìm kiếm, upload...
 
 ## 👥 5. Nhóm thực hiện
 
