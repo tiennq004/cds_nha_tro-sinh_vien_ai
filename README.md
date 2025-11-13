@@ -74,14 +74,42 @@
 
 ## ⚙️ 2. Công nghệ và công cụ sử dụng
 
-| Thành phần | Công nghệ |
-|-------------|------------|
-| **Frontend** | ReactJS, Axios, CSS |
-| **Backend** | NodeJS (ExpressJS) |
-| **Database** | MySQL (XAMPP) |
-| **AI Module** | Gemini API (gợi ý nhà trọ) |
-| **IDE** | Visual Studio Code |
-| **Kiểm thử** | Postman, GitHub Desktop |
+    Frontend (React + Vite)
+       ↓
+    Backend (Node.js + Express)
+       ↓
+    Database (MySQL / MariaDB)
+
+🖥️ Frontend
+
+- React 18, Vite, Bootstrap, Axios
+
+- Tích hợp Leaflet + OpenStreetMap để hiển thị vị trí phòng
+
+- Giao diện hiện đại, hỗ trợ AI Chatbot và tìm kiếm nâng cao
+
+💻 Backend
+
+- Node.js + Express.js, MySQL
+
+- JWT Authentication đảm bảo bảo mật
+
+- Tích hợp Google Gemini API và Nominatim API (Geocoding)
+
+- Quản lý người dùng, phòng trọ, tin nhắn, gợi ý AI
+
+🛠️ Công cụ phát triển
+
+- IDE: Visual Studio Code
+
+- Node.js: v14+
+
+- CSDL: MySQL 5.7+ hoặc MariaDB
+
+- API Key: Google Gemini
+
+- Hệ điều hành: Windows / Linux / macOS
+
 
 ---
 
