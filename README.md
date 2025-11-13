@@ -1,607 +1,130 @@
-# 🏠 Nền Tảng Tìm Kiếm Nhà Trọ với AI
-
-Nền tảng hỗ trợ người thuê và người cho thuê tìm kiếm, quản lý và chia sẻ thông tin phòng trọ một cách hiệu quả. Áp dụng chuyển đổi số vào tìm kiếm nhà trọ với tích hợp AI.
-
-## ✨ Tính năng chính
-
-### 🔐 Xác thực người dùng
-- ✅ Đăng ký tài khoản và đăng nhập
-- ✅ Phân quyền người thuê và người cho thuê
-- ✅ Quản lý thông tin cá nhân
-- ✅ Đổi mật khẩu
-
-### 🏘️ Quản lý phòng trọ (Người cho thuê)
-- ✅ Đăng bài cho thuê phòng
-- ✅ Quản lý danh sách bài đăng phòng trọ
-- ✅ Cập nhật thông tin phòng (địa chỉ, giá, diện tích, tiện nghi, quy định)
-- ✅ Xóa phòng trọ
-
-### 🔍 Tìm kiếm và khám phá (Người thuê)
-- ✅ Tìm kiếm phòng theo vị trí, giá cả, tiện nghi
-- ✅ Hiển thị vị trí phòng trọ trên bản đồ OpenStreetMap
-- ✅ Tìm kiếm phòng trọ gần vị trí hiện tại
-- ✅ Tìm kiếm theo địa chỉ cụ thể với bản đồ tương tác
-- ✅ So sánh các phòng trọ với nhau
-- ✅ Gợi ý các phòng trọ liên quan có giá tương đương
-
-### 🤖 AI và Chatbot
-- ✅ Chatbot AI thông minh tư vấn nhà trọ
-- ✅ Hệ thống AI gợi ý nhà trọ phù hợp dựa trên yêu cầu
-
-### 💬 Nhắn tin
-- ✅ Tính năng nhắn tin giữa người thuê và người cho thuê
-- ✅ Quản lý cuộc trò chuyện
-
-### 👥 Tìm người ở ghép
-- ✅ Đăng yêu cầu tìm người ở ghép
-- ✅ Quản lý yêu cầu tìm người ở ghép
-
-## 🛠 Công nghệ sử dụng
-
-### Backend
-- ✅ Node.js & Express.js
-- ✅ MySQL Database
-- ✅ JWT Authentication
-- ✅ Google Generative AI (Gemini)
-- ✅ Nominatim API (Geocoding)
-
-### Frontend
-- ✅ React 18
-- ✅ Vite
-- ✅ Leaflet & OpenStreetMap
-- ✅ Axios
-- ✅ Bootstrap (CSS Framework)
-- ✅ HTML, CSS, JavaScript
-
-## 📋 Yêu cầu hệ thống
-
-- Node.js (v14 trở lên)
-- MySQL (v5.7 trở lên hoặc MariaDB)
-- npm hoặc yarn
-- Google Gemini API Key
-
-## 🛠️ Cài đặt
-
-### Bước 1: Clone repository
-```bash
-git clone <repository-url>
-cd BTL
-```
-
-### Bước 2: Cài đặt dependencies
-
-```bash
-npm run install-all
-```
-
-Hoặc cài đặt riêng biệt:
-
-```bash
-# Backend
-npm install
-
-# Frontend
-cd client
-npm install
-cd ..
-```
-
-### Bước 3: Cấu hình MySQL
-
-1. Đảm bảo MySQL đã được cài đặt và đang chạy
-2. Tạo database (hoặc để script tự động tạo)
-
-### Bước 4: Cấu hình environment variables
-
-Tạo file `.env` ở thư mục gốc:
-
-```env
-# Server Configuration
-PORT=5000
-
-# Database Configuration
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=nha_tro_db
-
-# JWT Secret
-JWT_SECRET=your-secret-key-change-in-production
-
-# Google Gemini API
-GOOGLE_API_KEY=your_google_api_key_here
-```
-
-**Lấy Google Gemini API Key:**
-1. Truy cập [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Đăng nhập với tài khoản Google
-3. Tạo API key mới
-4. Copy API key vào file `.env`
-
-### Bước 5: Khởi tạo database
-
-```bash
-npm run init-db
-```
-
-Script này sẽ tự động:
-- Tạo database `nha_tro_db`
-- Tạo các bảng cần thiết (users, rooms, messages, roommate_requests, etc.)
-
-### Bước 6: Chạy ứng dụng
-
-#### Chạy cả backend và frontend cùng lúc:
-```bash
-npm run dev
-```
-
-#### Hoặc chạy riêng biệt:
-
-**Backend:**
-```bash
-npm run server
-```
-
-**Frontend (terminal mới):**
-```bash
-npm run client
-```
-
-### Truy cập ứng dụng:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
-
-## 📁 Cấu trúc dự án
-
-```
-BTL/
-├── server/
-│   ├── index.js                 # Server Express chính
-│   ├── database/
-│   │   ├── db.js                # Kết nối MySQL
-│   │   ├── schema.sql           # Schema database
-│   │   └── init.js              # Script khởi tạo database
-│   ├── middleware/
-│   │   └── auth.js              # Middleware xác thực
-│   ├── routes/
-│   │   ├── auth.js              # Route đăng ký/đăng nhập
-│   │   ├── rooms.js             # Route quản lý phòng trọ
-│   │   ├── chatbot.js           # Route chatbot AI
-│   │   ├── search.js            # Route tìm kiếm
-│   │   ├── ai.js                # Route AI gợi ý
-│   │   ├── messages.js          # Route nhắn tin
-│   │   ├── roommate.js          # Route tìm người ở ghép
-│   │   └── profile.js           # Route quản lý profile
-│   └── data/
-│       └── rooms.json           # Dữ liệu mẫu (không dùng nữa)
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Header.jsx
-│   │   │   ├── SearchSection.jsx
-│   │   │   ├── RoomList.jsx
-│   │   │   ├── RoomMap.jsx
-│   │   │   ├── Chatbot.jsx
-│   │   │   ├── AISuggestions.jsx
-│   │   │   └── Auth.jsx
-│   │   ├── utils/
-│   │   │   └── auth.js          # Utilities xác thực
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── index.html
-│   └── package.json
-├── package.json
-└── README.md
-```
-
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Đăng ký tài khoản
-- `POST /api/auth/login` - Đăng nhập
-- `GET /api/auth/me` - Lấy thông tin user hiện tại
-
-### Rooms
-- `GET /api/rooms` - Lấy tất cả phòng trọ (có thể lọc)
-- `GET /api/rooms/:id` - Lấy thông tin chi tiết một phòng
-- `POST /api/rooms` - Tạo phòng trọ mới (landlord only)
-- `PUT /api/rooms/:id` - Cập nhật phòng trọ (landlord only)
-- `DELETE /api/rooms/:id` - Xóa phòng trọ (landlord only)
-- `GET /api/rooms/nearby/search` - Tìm phòng gần vị trí
-
-### Search
-- `GET /api/search` - Tìm kiếm nhà trọ
-  - Query params: `keyword`, `minPrice`, `maxPrice`, `address`, `minArea`, `maxArea`, `utilities`
-- `GET /api/search/:id` - Lấy thông tin chi tiết một nhà trọ
-
-### Chatbot
-- `POST /api/chatbot/chat` - Gửi tin nhắn đến chatbot
-  - Body: `{ message: string, conversationHistory: array }`
-
-### AI Suggestions
-- `POST /api/ai/suggest` - Nhận gợi ý từ AI
-  - Body: `{ requirements: string, budget: number, location: string, preferences: string }`
-
-### Messages
-- `GET /api/messages/conversations` - Lấy danh sách cuộc trò chuyện
-- `GET /api/messages/conversation/:userId` - Lấy tin nhắn với user
-- `POST /api/messages` - Gửi tin nhắn
-- `PUT /api/messages/:messageId/read` - Đánh dấu đã đọc
-
-### Roommate
-- `GET /api/roommate` - Lấy danh sách yêu cầu tìm người ở ghép
-- `POST /api/roommate` - Tạo yêu cầu tìm người ở ghép (renter only)
-- `PUT /api/roommate/:id` - Cập nhật yêu cầu
-- `DELETE /api/roommate/:id` - Xóa yêu cầu
-
-### Profile
-- `GET /api/profile` - Lấy thông tin profile
-- `PUT /api/profile` - Cập nhật profile
-- `PUT /api/profile/password` - Đổi mật khẩu
-- `GET /api/profile/my-rooms` - Lấy phòng trọ của landlord
-
-## 🎨 Công nghệ sử dụng
-
-### Backend
-- Node.js
-- Express.js
-- MySQL2
-- JWT (jsonwebtoken)
-- bcryptjs
-- Google Generative AI (Gemini)
-- Axios (for geocoding)
-- CORS
-- dotenv
-
-### Frontend
-- React 18
-- Vite
-- Leaflet & OpenStreetMap
-- Axios
-- CSS3 (Gradient, Animations)
-
-## 📝 Database Schema
-
-### Bảng users
-- id, username, email, password, full_name, phone, role, avatar, created_at, updated_at
-
-### Bảng rooms
-- id, landlord_id, title, description, price, address, latitude, longitude, area, utilities (JSON), images (JSON), rules, available, created_at, updated_at
-
-### Bảng messages
-- id, sender_id, receiver_id, room_id, message, read_status, created_at
-
-### Bảng roommate_requests
-- id, user_id, title, description, budget_min, budget_max, preferred_location, preferences, status, created_at, updated_at
-
-### Bảng favorites
-- id, user_id, room_id, created_at
-
-### Bảng reviews
-- id, user_id, room_id, rating, comment, created_at
-
-## 🔒 Bảo mật
-
-- JWT authentication
-- Password hashing với bcrypt
-- Không commit file `.env` vào git
-- API key Gemini nên được bảo mật
-- Middleware xác thực cho các route bảo mật
-- Phân quyền dựa trên role (renter/landlord)
-
-## 📄 License
-
-MIT
-
-## 👨‍💻 Tác giả
-
-Dự án được phát triển cho môn học Chuyển Đổi Số
+<h2 align="center">
+    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+    🎓 Faculty of Information Technology (DaiNam University)
+    </a>
+</h2>
+
+<h2 align="center">  
+   ỨNG DỤNG CHUYỂN ĐỔI SỐ TRONG TÌM KIẾM NHÀ TRỌ
+</h2>
+
+<div align="center">
+    <p align="center">
+        <img src="https://github.com/tiennq004/BTL_ChuyenDoiSo/blob/main/docs/logo_fitdnu.png" alt="FIT DNU Logo" width="180"/>
+        <img src="https://github.com/tiennq004/BTL_ChuyenDoiSo/blob/main/docs/logo_dnu.png" alt="DaiNam University Logo" width="200"/>
+    </p>
+
+[![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
+[![Faculty of Information Technology](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-blue?style=for-the-badge)](https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin)
+[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-orange?style=for-the-badge)](https://dainam.edu.vn)
+</div>
 
 ---
 
-**Lưu ý:** 
-- Đảm bảo bạn đã có MySQL đang chạy và Google Gemini API Key hợp lệ trước khi chạy ứng dụng
-- Đảm bảo đã chạy `npm run init-db` để khởi tạo database trước khi start server
-
-Nền tảng hỗ trợ người thuê và người cho thuê tìm kiếm, quản lý và chia sẻ thông tin phòng trọ một cách hiệu quả. Áp dụng chuyển đổi số vào tìm kiếm nhà trọ với tích hợp AI.
-
-## ✨ Tính năng chính
-
-### 🔐 Xác thực người dùng
-- ✅ Đăng ký tài khoản và đăng nhập
-- ✅ Phân quyền người thuê và người cho thuê
-- ✅ Quản lý thông tin cá nhân
-- ✅ Đổi mật khẩu
-
-### 🏘️ Quản lý phòng trọ (Người cho thuê)
-- ✅ Đăng bài cho thuê phòng
-- ✅ Quản lý danh sách bài đăng phòng trọ
-- ✅ Cập nhật thông tin phòng (địa chỉ, giá, diện tích, tiện nghi, quy định)
-- ✅ Xóa phòng trọ
-
-### 🔍 Tìm kiếm và khám phá (Người thuê)
-- ✅ Tìm kiếm phòng theo vị trí, giá cả, tiện nghi
-- ✅ Hiển thị vị trí phòng trọ trên bản đồ OpenStreetMap
-- ✅ Tìm kiếm phòng trọ gần vị trí hiện tại
-- ✅ Tìm kiếm theo địa chỉ cụ thể với bản đồ tương tác
-- ✅ So sánh các phòng trọ với nhau
-- ✅ Gợi ý các phòng trọ liên quan có giá tương đương
-
-### 🤖 AI và Chatbot
-- ✅ Chatbot AI thông minh tư vấn nhà trọ
-- ✅ Hệ thống AI gợi ý nhà trọ phù hợp dựa trên yêu cầu
-
-### 💬 Nhắn tin
-- ✅ Tính năng nhắn tin giữa người thuê và người cho thuê
-- ✅ Quản lý cuộc trò chuyện
-
-### 👥 Tìm người ở ghép
-- ✅ Đăng yêu cầu tìm người ở ghép
-- ✅ Quản lý yêu cầu tìm người ở ghép
-
-## 🛠 Công nghệ sử dụng
-
-### Backend
-- ✅ Node.js & Express.js
-- ✅ MySQL Database
-- ✅ JWT Authentication
-- ✅ Google Generative AI (Gemini)
-- ✅ Nominatim API (Geocoding)
-
-### Frontend
-- ✅ React 18
-- ✅ Vite
-- ✅ Leaflet & OpenStreetMap
-- ✅ Axios
-- ✅ Bootstrap (CSS Framework)
-- ✅ HTML, CSS, JavaScript
-
-## 📋 Yêu cầu hệ thống
-
-- Node.js (v14 trở lên)
-- MySQL (v5.7 trở lên hoặc MariaDB)
-- npm hoặc yarn
-- Google Gemini API Key
-
-## 🛠️ Cài đặt
-
-### Bước 1: Clone repository
-```bash
-git clone <repository-url>
-cd BTL
-```
-
-### Bước 2: Cài đặt dependencies
-
-```bash
-npm run install-all
-```
-
-Hoặc cài đặt riêng biệt:
-
-```bash
-# Backend
-npm install
-
-# Frontend
-cd client
-npm install
-cd ..
-```
-
-### Bước 3: Cấu hình MySQL
-
-1. Đảm bảo MySQL đã được cài đặt và đang chạy
-2. Tạo database (hoặc để script tự động tạo)
-
-### Bước 4: Cấu hình environment variables
-
-Tạo file `.env` ở thư mục gốc:
-
-```env
-# Server Configuration
-PORT=5000
-
-# Database Configuration
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=nha_tro_db
-
-# JWT Secret
-JWT_SECRET=your-secret-key-change-in-production
-
-# Google Gemini API
-GOOGLE_API_KEY=your_google_api_key_here
-```
-
-**Lấy Google Gemini API Key:**
-1. Truy cập [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Đăng nhập với tài khoản Google
-3. Tạo API key mới
-4. Copy API key vào file `.env`
-
-### Bước 5: Khởi tạo database
-
-```bash
-npm run init-db
-```
-
-Script này sẽ tự động:
-- Tạo database `nha_tro_db`
-- Tạo các bảng cần thiết (users, rooms, messages, roommate_requests, etc.)
-
-### Bước 6: Chạy ứng dụng
-
-#### Chạy cả backend và frontend cùng lúc:
-```bash
-npm run dev
-```
-
-#### Hoặc chạy riêng biệt:
-
-**Backend:**
-```bash
-npm run server
-```
-
-**Frontend (terminal mới):**
-```bash
-npm run client
-```
-
-### Truy cập ứng dụng:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
-
-## 📁 Cấu trúc dự án
-
-```
-BTL/
-├── server/
-│   ├── index.js                 # Server Express chính
-│   ├── database/
-│   │   ├── db.js                # Kết nối MySQL
-│   │   ├── schema.sql           # Schema database
-│   │   └── init.js              # Script khởi tạo database
-│   ├── middleware/
-│   │   └── auth.js              # Middleware xác thực
-│   ├── routes/
-│   │   ├── auth.js              # Route đăng ký/đăng nhập
-│   │   ├── rooms.js             # Route quản lý phòng trọ
-│   │   ├── chatbot.js           # Route chatbot AI
-│   │   ├── search.js            # Route tìm kiếm
-│   │   ├── ai.js                # Route AI gợi ý
-│   │   ├── messages.js          # Route nhắn tin
-│   │   ├── roommate.js          # Route tìm người ở ghép
-│   │   └── profile.js           # Route quản lý profile
-│   └── data/
-│       └── rooms.json           # Dữ liệu mẫu (không dùng nữa)
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Header.jsx
-│   │   │   ├── SearchSection.jsx
-│   │   │   ├── RoomList.jsx
-│   │   │   ├── RoomMap.jsx
-│   │   │   ├── Chatbot.jsx
-│   │   │   ├── AISuggestions.jsx
-│   │   │   └── Auth.jsx
-│   │   ├── utils/
-│   │   │   └── auth.js          # Utilities xác thực
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── index.html
-│   └── package.json
-├── package.json
-└── README.md
-```
-
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Đăng ký tài khoản
-- `POST /api/auth/login` - Đăng nhập
-- `GET /api/auth/me` - Lấy thông tin user hiện tại
-
-### Rooms
-- `GET /api/rooms` - Lấy tất cả phòng trọ (có thể lọc)
-- `GET /api/rooms/:id` - Lấy thông tin chi tiết một phòng
-- `POST /api/rooms` - Tạo phòng trọ mới (landlord only)
-- `PUT /api/rooms/:id` - Cập nhật phòng trọ (landlord only)
-- `DELETE /api/rooms/:id` - Xóa phòng trọ (landlord only)
-- `GET /api/rooms/nearby/search` - Tìm phòng gần vị trí
-
-### Search
-- `GET /api/search` - Tìm kiếm nhà trọ
-  - Query params: `keyword`, `minPrice`, `maxPrice`, `address`, `minArea`, `maxArea`, `utilities`
-- `GET /api/search/:id` - Lấy thông tin chi tiết một nhà trọ
-
-### Chatbot
-- `POST /api/chatbot/chat` - Gửi tin nhắn đến chatbot
-  - Body: `{ message: string, conversationHistory: array }`
-
-### AI Suggestions
-- `POST /api/ai/suggest` - Nhận gợi ý từ AI
-  - Body: `{ requirements: string, budget: number, location: string, preferences: string }`
-
-### Messages
-- `GET /api/messages/conversations` - Lấy danh sách cuộc trò chuyện
-- `GET /api/messages/conversation/:userId` - Lấy tin nhắn với user
-- `POST /api/messages` - Gửi tin nhắn
-- `PUT /api/messages/:messageId/read` - Đánh dấu đã đọc
-
-### Roommate
-- `GET /api/roommate` - Lấy danh sách yêu cầu tìm người ở ghép
-- `POST /api/roommate` - Tạo yêu cầu tìm người ở ghép (renter only)
-- `PUT /api/roommate/:id` - Cập nhật yêu cầu
-- `DELETE /api/roommate/:id` - Xóa yêu cầu
-
-### Profile
-- `GET /api/profile` - Lấy thông tin profile
-- `PUT /api/profile` - Cập nhật profile
-- `PUT /api/profile/password` - Đổi mật khẩu
-- `GET /api/profile/my-rooms` - Lấy phòng trọ của landlord
-
-## 🎨 Công nghệ sử dụng
-
-### Backend
-- Node.js
-- Express.js
-- MySQL2
-- JWT (jsonwebtoken)
-- bcryptjs
-- Google Generative AI (Gemini)
-- Axios (for geocoding)
-- CORS
-- dotenv
-
-### Frontend
-- React 18
-- Vite
-- Leaflet & OpenStreetMap
-- Axios
-- CSS3 (Gradient, Animations)
-
-## 📝 Database Schema
-
-### Bảng users
-- id, username, email, password, full_name, phone, role, avatar, created_at, updated_at
-
-### Bảng rooms
-- id, landlord_id, title, description, price, address, latitude, longitude, area, utilities (JSON), images (JSON), rules, available, created_at, updated_at
-
-### Bảng messages
-- id, sender_id, receiver_id, room_id, message, read_status, created_at
-
-### Bảng roommate_requests
-- id, user_id, title, description, budget_min, budget_max, preferred_location, preferences, status, created_at, updated_at
-
-### Bảng favorites
-- id, user_id, room_id, created_at
-
-### Bảng reviews
-- id, user_id, room_id, rating, comment, created_at
-
-## 🔒 Bảo mật
-
-- JWT authentication
-- Password hashing với bcrypt
-- Không commit file `.env` vào git
-- API key Gemini nên được bảo mật
-- Middleware xác thực cho các route bảo mật
-- Phân quyền dựa trên role (renter/landlord)
-
-## 📄 License
-
-MIT
-
-## 👨‍💻 Tác giả
-
-Dự án được phát triển cho môn học Chuyển Đổi Số
+## 📖 1. Giới thiệu hệ thống
+
+**Ứng dụng Chuyển đổi số trong tìm kiếm nhà trọ** là hệ thống web hỗ trợ sinh viên và người cho thuê trọ đăng tin, tìm kiếm, so sánh, và đặt cọc trực tuyến thông qua mã QR.  
+Hệ thống được phát triển nhằm **nâng cao hiệu quả quản lý phòng trọ**, giúp tiết kiệm thời gian, minh bạch thông tin và hỗ trợ quá trình chuyển đổi số trong lĩnh vực bất động sản cho thuê.
+
+### 🎯 Mục tiêu chính
+- Giúp **người thuê trọ** dễ dàng tìm kiếm, lọc, so sánh và đặt cọc phòng nhanh chóng.  
+- Hỗ trợ **người cho thuê** quản lý danh sách phòng, thêm ảnh, cập nhật tình trạng, và nhận thông tin đặt cọc.  
+- Tích hợp **AI gợi ý nhà trọ** dựa trên hành vi tìm kiếm.  
+- Cung cấp **nền tảng giao tiếp trực tiếp (chat)** giữa người thuê và chủ trọ.  
+- Ứng dụng mã **QR thanh toán đặt cọc** thông qua hình ảnh do chủ trọ tải lên.
 
 ---
 
-**Lưu ý:** 
-- Đảm bảo bạn đã có MySQL đang chạy và Google Gemini API Key hợp lệ trước khi chạy ứng dụng
-- Đảm bảo đã chạy `npm run init-db` để khởi tạo database trước khi start server
+## 🔧 2. Công nghệ và công cụ sử dụng
+
+- **Frontend:** ReactJS, Axios, CSS  
+- **Backend:** NodeJS (ExpressJS)  
+- **Cơ sở dữ liệu:** MySQL (chạy trên XAMPP)  
+- **AI Module:** Tích hợp Gemini API để gợi ý phòng trọ phù hợp  
+- **IDE:** Visual Studio Code  
+- **Triển khai:** Vercel / AWS  
+- **Kiểm thử:** Postman, GitHub  
+
+---
+
+## 🏠 3. Các chức năng chính
+
+### 🧑‍🎓 Người thuê trọ:
+- Đăng ký, đăng nhập tài khoản.  
+- Tìm kiếm phòng trọ theo khu vực, giá, diện tích, tiện ích.  
+- So sánh các phòng trọ.  
+- Nhắn tin trực tiếp với chủ trọ.  
+- Đặt cọc phòng thông qua mã QR.
+
+### 🏠 Người cho thuê:
+- Đăng tin phòng trọ mới, kèm ảnh, tiện ích, mã QR.  
+- Quản lý danh sách phòng đã đăng.  
+- Xem và phản hồi tin nhắn từ người thuê.  
+- Theo dõi các lượt đặt cọc.
+
+---
+
+## 🚀 4. Hình ảnh hệ thống
+
+<p align="center">
+  <img src="docs/giao_dien_chinh.png" alt="Ảnh 1" width="800"/>
+  <em>Hình 1: Giao diện chính của hệ thống</em>
+</p>
+
+<p align="center">
+  <img src="docs/giao_dien_form_dang_ky.png" alt="Ảnh 2" width="800"/>
+  <em>Hình 2: Form đăng ký người dùng</em>
+</p>
+
+<p align="center">
+  <img src="docs/giao_dien_form_dang_nhap.png" alt="Ảnh 3" width="800"/>
+  <em>Hình 3: Form đăng nhập</em>
+</p>
+
+<p align="center">
+  <img src="docs/xem_tro_tren_gmap.png" alt="Ảnh 4" width="800"/>
+  <em>Hình 4: Tích hợp Google Maps xem vị trí nhà trọ</em>
+</p>
+
+<p align="center">
+  <img src="docs/them_tt_phong_tro.png" alt="Ảnh 5" width="800"/>
+  <em>Hình 5: Giao diện thêm thông tin phòng trọ</em>
+</p>
+
+<p align="center">
+  <img src="docs/giao_dien_quan_ly_phong_tro.png" alt="Ảnh 6" width="800"/>
+  <em>Hình 6: Giao diện quản lý phòng trọ của chủ trọ</em>
+</p>
+
+<p align="center">
+  <img src="docs/tin_nhan.png" alt="Ảnh 7" width="800"/>
+  <em>Hình 7: Tính năng nhắn tin giữa người thuê và chủ trọ</em>
+</p>
+
+<p align="center">
+  <img src="docs/so_sanh_phong_tro.png" alt="Ảnh 8" width="800"/>
+  <em>Hình 8: So sánh các phòng trọ đã chọn</em>
+</p>
+
+<p align="center">
+  <img src="docs/ai.png" alt="Ảnh 9" width="800"/>
+  <em>Hình 9: AI gợi ý phòng trọ phù hợp</em>
+</p>
+
+---
+
+## 📂 5. Cài đặt và chạy dự án
+
+### 🪜 Bước 1. Chuẩn bị
+- Cài đặt **Node.js**, **npm** và **XAMPP**  
+- Khởi động **MySQL** và **Apache**
+
+### 🪜 Bước 2. Cấu hình cơ sở dữ liệu
+- Tạo database `nhatro`  
+- Import file `nhatro.sql` trong thư mục `server/database/`
+
+### 🪜 Bước 3. Chạy server
+```bash
+cd server
+npm install
+npm start
