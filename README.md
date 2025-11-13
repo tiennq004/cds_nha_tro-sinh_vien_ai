@@ -241,10 +241,13 @@
 
 ## 👥 5. Nhóm thực hiện
 
-| Họ và tên | Lớp | Vai trò |
-|------------|------|----------|
-| **Nguyễn Quang Tiến** | CNTT 16-03 | Thiết kế & lập trình Frontend |
-| **Hoàng Công Sơn** | CNTT 16-03 | Thiết kế & lập trình Backend |
+- Sinh viên: Nguyễn Quang Tiến & Hoàng Công Sơn
 
-**Giảng viên hướng dẫn:** ThS. Nguyễn Văn Nhơn  
+- Lớp: CNTT 16-03
+
+- Khoa: Công nghệ thông tin
+
+- Trường: Đại học Đại Nam
+
+**Giảng viên hướng dẫn:** ThS. Nguyễn Văn Nhân  
 © 2025 – Khoa Công Nghệ Thông Tin, Trường Đại học Đại Nam.
