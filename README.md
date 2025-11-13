@@ -175,21 +175,67 @@
 
 ---
 
-## 🧪 4. Kết quả thử nghiệm
+## ⚙️ 4. Các bước cài đặt
 
-| Tiêu chí | Kết quả đạt được |
-|-----------|------------------|
-| Tốc độ tải trang | Dưới 2 giây |
-| Độ ổn định | Hoạt động ổn định |
-| Lọc và so sánh | Chính xác, mượt |
-| Chat người dùng | Tin nhắn gửi tức thời |
-| Đặt cọc bằng QR | Quét nhanh, dễ thao tác |
+1. Các bước cài đặt và chạy chương trình
 
-<p align="center">
-  <img src="docs/giao_dien_chinh.png" alt="Ảnh giao diện chính" width="700"/>
-</p>
+Bước 1. Giải nén dự án
 
----
+- Giải nén file BTL.zip vào một thư mục bất kỳ.
+
+Bước 2. Cài đặt môi trường
+
+- Cài Node.js (phiên bản ≥ 18).
+
+- Cài MongoDB (nếu dự án sử dụng cơ sở dữ liệu này).
+
+Bước 3. Cài đặt thư viện
+
+Mở Terminal hoặc CMD tại thư mục gốc của dự án và chạy lệnh:
+
+    npm install
+
+Sau đó di chuyển vào thư mục client để cài thư viện cho giao diện:
+
+    cd client
+    
+    npm install
+
+
+Bước 4. Cấu hình biến môi trường
+
+Tạo file .env trong thư mục chính (nếu chưa có).
+
+Điền các thông tin kết nối, ví dụ:
+
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/tenCSDL
+JWT_SECRET=secret_key
+
+
+Bước 5. Chạy chương trình
+Mở hai cửa sổ terminal:
+
+Cửa sổ 1 (backend):
+
+npm start
+
+
+Cửa sổ 2 (frontend):
+
+cd client
+npm run dev
+
+
+Sau khi khởi chạy, mở trình duyệt và truy cập địa chỉ:
+👉 http://localhost:5173
+ (hoặc cổng hiển thị trong terminal).
+
+Bước 6. Kiểm tra hoạt động
+
+Đăng ký / Đăng nhập người dùng.
+
+Kiểm tra các chức năng chính: thêm, sửa, xóa, tìm kiếm, upload...
 
 ## 👥 5. Nhóm thực hiện
 
