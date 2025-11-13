@@ -28,6 +28,18 @@ function RoomManagement({ onClose }) {
     fetchMyRooms()
   }, [])
 
+  const [qrFile, setQRFile] = useState(null);
+const [qrPreview, setQRPreview] = useState(null);
+
+const handleQRUpload = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setQRFile(file);
+    setQRPreview(URL.createObjectURL(file));
+  }
+};
+
+
   const fetchMyRooms = async () => {
     try {
       setLoading(true)
@@ -492,6 +504,16 @@ function RoomManagement({ onClose }) {
                         <span className="status-unavailable">✗ Đã cho thuê</span>
                       )}
                     </div>
+                      <div className="form-group">
+                      <label>Mã QR thanh toán (đặt cọc / trả tiền nhà)</label>
+                      <input 
+                        type="file" 
+                          accept="image/*"
+                            onChange={handleQRUpload}
+                      />
+                              {qrPreview && <img src={qrPreview} alt="QR Preview" className="qr-preview" />}
+                    </div>
+
                     {room.utilities && room.utilities.length > 0 && (
                       <div className="room-utilities">
                         <strong>Tiện ích:</strong>
