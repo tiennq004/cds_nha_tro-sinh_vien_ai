@@ -231,6 +231,7 @@
     - Sau khi khởi chạy, mở trình duyệt và truy cập địa chỉ:
 
             👉 http://localhost:5173
+      
              (hoặc cổng hiển thị trong terminal).
 
 - Bước 6. Kiểm tra hoạt động
@@ -241,7 +242,7 @@
 
 ## 👥 5. Nhóm thực hiện
 
-- Sinh viên: Nguyễn Quang Tiến & Hoàng Công Sơn
+- Nhóm 9: Nguyễn Quang Tiến & Hoàng Công Sơn
 
 - Lớp: CNTT 16-03
 
